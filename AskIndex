@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,k;
+    int number,index;
+    int a[1000]={1};
+    printf("======welcome to index Algorithm=======\n");
+    printf("please input a number:\n");
+    scanf("%d",&number);
+    printf("please input a index:\n");
+    scanf("%d",&index);
+    for(i=0;i<index;i++){
+        for(j=0;j<1000;j++){
+            a[j]*=number;
+        }
+        for(k=0;k<1000;k++){
+            while(a[k]>=10){
+                a[k]-=10;
+                a[k+1]+=1;
+            }
+        }
+    }
+    i=999;
+    while(a[i]==0){
+        i--;
+    }
+    for(;i>=0;i--){
+        printf("%d",a[i]);
+    }
+    printf("\nThank you!\n");
+    return 0;
+}
